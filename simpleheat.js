@@ -104,8 +104,10 @@ simpleheat.prototype = {
         ctx.clearRect(0, 0, this._width, this._height);
 
         if (fillStyle) {
+          ctx.save();
           ctx.fillStyle = fillStyle;
           ctx.fillRect(0, 0, this._width, this._height);
+          ctx.restore();
         }
 
         // draw a grayscale heatmap by putting a blurred circle at each data point
